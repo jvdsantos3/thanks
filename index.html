@@ -52,5 +52,18 @@
     <h1>MUITO OBRIGADO</h1>
     <span>AMO VOCÊS <i class="fas fa-heart"></i></span>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    function confettiAnimation() {
+      confetti({
+        particleCount: 2000,
+        spread: 1000,
+        origin: { y: 0.4 }
+      });
+    }
+  
+    window.onload = confettiAnimation;
+  </script>
 </body>
 </html>
