@@ -45,6 +45,29 @@
       font-size: 64px;
       color: #323232;
     }
+
+    body > i.fa-heart {
+      position: absolute;
+      color: rgba(255, 79, 79, 0.874);
+      font-size: 64px;
+      animation: grow-and-fade 2s ease-in-out forwards;
+      opacity: 0.8;
+    }
+
+    @keyframes grow-and-fade {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -64,6 +87,22 @@
     }
   
     window.onload = confettiAnimation;
+
+    setInterval(confettiAnimation, 5000)
+
+    function createHeart() {
+      const heart = document.createElement('i');
+      heart.classList.add('fas', 'fa-heart');
+      
+      heart.style.top = Math.random() * 100 + 'vh';
+      heart.style.left = Math.random() * 100 + 'vw';
+      
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 2000); 
+    }
+
+    setInterval(createHeart, 500); 
   </script>
 </body>
 </html>
